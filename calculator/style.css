@@ -1,0 +1,82 @@
+body {
+    background-color: #100e15; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Font family */
+  }
+  
+  .calculator {
+    background-color: hsl(0, 0%, 5%); /* Dark gray calculator background */
+    border: 2px solid #562e2e; /* White border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center align content */
+    color: #fff; /* White text color */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .calculator .welcome {
+    position: absolute;
+   
+    bottom: 0;
+    left: 0;
+    
+     /* Start position */
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.8); Transparent black background */
+    padding: 5px;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.6s ease-in-out; /* Transition effect */
+    z-index: 1; /* Ensure above buttons */
+  }
+  
+  .calculator.show-welcome .welcome {
+    transform: translateX(0); /* Slide down into view */
+  }
+  
+  .calculator #display {
+    width: calc(100% - 10px);
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 24px;
+    text-align: right;
+    background-color: #766969; /* Darker gray background for display */
+    color: #383333;
+    border: black;
+    border-radius: 10px;
+  }
+  
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 7px;
+  }
+  
+  .keys button {
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0%;
+    background-color: #444; /* Dark gray buttons */
+  }
+  
+  .keys button:nth-child(4n) {
+    background-color: #ca2727; /* Orange for right column */
+  }
+  
+  .keys button:hover {
+    background-color: #555; /* Darken on hover */
+  }
+  
+  .keys button:active {
+    transform: translateY(2px); /* Pressed effect */
+  }
+  
